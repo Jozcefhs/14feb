@@ -15,7 +15,7 @@
   \*********************/
 /***/ (() => {
 
-eval("\r\n\r\n\r\nconst create = document.getElementById('create')\r\ncreate.addEventListener('click', function () {\r\n    const exEl = document.getElementById('container')\r\n    const newEl = document.createElement('div')\r\n    newEl.setAttribute('class', 'menu-item')\r\n    newEl.innerHTML = 'This is the time'\r\n    span1 = document.createElement('span')\r\n    span2 = document.createElement('span')\r\n    span1.setAttribute('class', 'icon')\r\n    span2.setAttribute('class', 'label')\r\n    const oldDiv = document.getElementById('old')\r\n    exEl.insertBefore(newEl, oldDiv)\r\n})\r\n\r\n\n\n//# sourceURL=webpack://dmapp/./src/exer.js?");
+eval("\r\n\r\n\r\nconst exEl = document.getElementById('container')\r\nconst oldDiv = document.getElementById('old')\r\nconst create = document.getElementById('create')\r\n\r\ncreate.addEventListener('click', function () {\r\n    const newEl = document.createElement('div')\r\n    newEl.setAttribute('class', 'menu-item')\r\n    //newEl.innerHTML = 'This is the time'\r\n    const span1 = document.createElement('span')\r\n    const span2 = document.createElement('span')\r\n    span1.setAttribute('class', 'icon')\r\n    span2.setAttribute('class', 'label')\r\n    span2.textContent = 'bless the Lord'\r\n    span1.innerHTML = \"&#x1F9E0\"\r\n    newEl.append(span1)\r\n    newEl.append(span2)\r\n   \r\n    exEl.insertBefore(newEl, oldDiv)\r\n})\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://dmapp/./src/exer.js?");
 
 /***/ })
 
