@@ -140,15 +140,15 @@ html, body {
   }
   @container (max-width: 800px) {
     main {
-      height: 230mm;
+      height: 100vh;
       width: 100vw;
-      margin-top: 8mm;
-       
+      /* margin-top: 8mm; */
+      /* margin-bottom: 8mm; */
     }
     
     /* Scroll container styling */
     .scroll-container {
-      max-height: calc(100vh - 45mm);
+      max-height: calc(100vh - 20mm);
      
     }
     
@@ -164,15 +164,8 @@ html, body {
       font-size: 6mm;
     }
     .content {
-      margin-top: 30mm; 
-      margin-bottom: 20mm;   
-    }
-    footer {
-      margin-bottom: 2mm;
-      margin-top: 0mm;
-    }
-    header {
-      margin-bottom: 0mm;
+      margin-top: 10mm; 
+      margin-bottom: 10mm;   
     }
     
   }
