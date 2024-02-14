@@ -148,7 +148,7 @@ html, body {
     
     /* Scroll container styling */
     .scroll-container {
-      max-height: calc(218mm - 20mm);
+      max-height: calc(100vh - 20mm);
      
     }
     
