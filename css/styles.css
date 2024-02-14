@@ -7,6 +7,10 @@ html {
   body {
     height: 100vh;
     width: 100vw;
+    background-image: url(/images/backgroud.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   
   /* Set up basic styling */
@@ -15,12 +19,9 @@ html {
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
-    height: 134mm;
-    width: 218mm;
-    background-image: url(/images/backgroud.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    /* height: 134mm;
+    width: 218mm; */
+    
     overflow: hidden;
   }
 
@@ -37,9 +38,9 @@ html {
     padding: 10px;
     z-index: 1000; /*Ensure the header is above other elements*/
     box-shadow: 0 0 20px cyan;
-    height: 8mm;
+    /* height: 8mm;
     width: 218mm;
-    
+     */
   }
    h1 {
      -webkit-text-stroke: #8512b3;
@@ -65,14 +66,14 @@ html {
   
   /* Content styling */
   .content {
-    height: 134mm;
+    /* height: 134mm; */
     margin-top: 25mm; 
     margin-bottom: 8mm;   
   }
   
   /* Scroll container styling */
   .scroll-container {
-    max-height: calc(134mm - 20mm);
+    max-height: calc(100vh - 20mm);
     overflow-x: auto;
   }
   
