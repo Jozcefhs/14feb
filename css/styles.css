@@ -89,6 +89,12 @@ html, body {
     padding: 15px;
     text-align: center;
     border-radius: 8px;
+    position: relative;
+  }
+  
+  .menu-item:hover {
+    /* background: #af99b4; */
+    /* opacity: 0.25; */
   }
   
   /* Footer styling */
@@ -113,20 +119,15 @@ html, body {
   
   /* Additional styling for icons */
   .grid-menu > .menu-item .icon {
-    width: 100px;
+    /* width: 100px; */
     font-size: 50px;
     border: 1px solid #ddd;
     text-align: center;
     border-radius: 8px;
   }
   
-  .menu-icon {
-    color: aquamarine;
-    font-size: 30px;
-    text-align: center;
-    margin-right: 1.5rem;
-  }
   
+
   .label {
     display: block; /* Ensure labels appear below icons */
     font-size: 15px;
@@ -168,4 +169,44 @@ html, body {
       margin-bottom: 10mm;   
     }
     
+  }
+
+  .option {
+    color: rgba(236, 226, 226, 0.747);
+    transform: rotate(90deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    font-size: large;
+    position: absolute;
+    top: 2px;
+    right: 0;
+  }
+  
+  .option:hover, .option:active {
+    color: white;
+    background: none;
+    font-size: 2rem;
+    right: -0.7rem;
+    top: 0;
+  }
+  .option:active {
+    color: rgb(233, 155, 155);
+    background: none;
+    font-size: 2rem;
+    right: -0.7rem;
+    top: 0;
+  }
+  #create:hover {
+    background: #af99b4;
+    border: none;
+    box-shadow: 0 0 8px pink;
+    opacity: 0.8;
+  }
+  #create:active {
+    background: #e7b7f1;
+    border: none;
+    box-shadow: 0 0 20px 4px pink;
+    opacity: 0.8;
   }
