@@ -85,7 +85,7 @@ html, body {
   }
   
   .menu-item {
-    /* border: 1px solid #ddd; */
+    border: 1px solid #ddd;
     padding: 15px;
     text-align: center;
     border-radius: 8px;
@@ -172,32 +172,26 @@ html, body {
   }
 
   .option {
-    color: rgba(236, 226, 226, 0.747);
-    transform: rotate(90deg);
+    color: rgba(145, 142, 142, 0.342);
+    /* transform: rotate(90deg);
     -ms-transform: rotate(45deg);
     -webkit-transform: rotate(90deg);
     -o-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    font-size: large;
+    -moz-transform: rotate(45deg); */
+    font-size: 25px;
     position: absolute;
-    top: 2px;
-    right: 0;
+    top: -6px;
+    right: 10px;
   }
   
-  .option:hover, .option:active {
-    color: white;
-    background: none;
-    font-size: 2rem;
-    right: -0.7rem;
-    top: 0;
+  .option:hover {
+    cursor: pointer;
+    color: #fff;
   }
   .option:active {
-    color: rgb(233, 155, 155);
-    background: none;
-    font-size: 2rem;
-    right: -0.7rem;
-    top: 0;
+    color: rgb(199, 6, 32);
   }
+  
   #create:hover {
     background: #af99b4;
     border: none;
@@ -209,4 +203,34 @@ html, body {
     border: none;
     box-shadow: 0 0 20px 4px pink;
     opacity: 0.8;
+  }
+
+  a[data-tool-tip] {
+    position: relative;
+  }
+
+  a[data-tool-tip]::after {
+    content: attr(data-tool-tip);
+    display: block;
+    
+    font-size: .6rem;
+    position: absolute;
+    
+    color: #3e2f50;
+    padding: .8em .6em;
+    border-radius: 3px;
+    bottom: -2px;
+    left: -40px;
+    white-space: nowrap;
+    transform: scale(.6);
+    transition:
+      transform ease-out 200ms,
+      bottom ease-out 200ms;
+  }
+
+  a[data-tool-tip]:hover::after{
+    transform: scale(1);
+    bottom: 100%;
+    background-color: gray;
+    color: white;
   }
