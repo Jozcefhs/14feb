@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mer">
+        this
+    </div>
+    <button id="ner">type</button>
+    <style>
+        body{
+            user-select: none;
+            background-color: antiquewhite;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+           
+        }
+
+        #ner{
+            position: absolute;
+            
+            top: 50%;
+            padding: 20px;
+            border-radius: 8px;
+            border-color: white;
+        }
+        #mer{
+            position: absolute;
+            top: 60%;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 2px solid white;
+            border-left: 2px solid white;
+            border-bottom: 1px solid rgb(200, 203, 206);
+            border-right: 1px solid rgb(200, 203, 206);
+            width: 40mm;
+            height: 10mm;
+            background: rgb(221, 235, 235);
+            box-shadow: 2px 2px 2px  rgb(94, 92, 92);
+            text-align: center;
+        }
+
+        #mer:hover{
+            cursor: pointer;
+        }
+
+        #mer:active{
+            background: rgb(221, 235, 235);
+            box-shadow: -2px -2px 2px  rgb(94, 92, 92);
+            border-bottom: 3px solid white;
+            border-right: 3px solid white;
+            border-top: 1px solid rgb(200, 203, 206);
+            border-left: 1px solid rgb(200, 203, 206);
+        }
+
+
+    </style>
+</body>
+</html>
