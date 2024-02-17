@@ -93,8 +93,8 @@ html, body {
   }
   
   .menu-item:hover {
-    /* background: #af99b4; */
-    /* opacity: 0.25; */
+    background: #af99b4;
+    opacity: 0.25;
   }
   
   /* Footer styling */
