@@ -225,7 +225,7 @@ html, body {
     bottom: -4px;
     left: -50px;
     white-space: nowrap;
-    transform: scale(.6);
+    transform: scale(.3);
     /* transition:
       transform ease-out 200ms,
       bottom ease-out 200ms; */
