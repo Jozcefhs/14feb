@@ -257,6 +257,7 @@ html, body {
     z-index: 1;
     flex-wrap: nowrap;
     visibility: hidden;
+    box-shadow: 8px 8px 6px rgb(36, 35, 35);
   }
 .open-subject-popup {
   visibility: visible;
@@ -293,10 +294,6 @@ html, body {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    
-  }
-  #createsub1, #createsub {
-    
   }
 
   .mer{
@@ -335,4 +332,51 @@ html, body {
 #createsub:active {
   color: red;
   font-size: 0.8rem;
+}
+
+.pop {
+  position: absolute;
+  top: 20vh;
+  left: calc(50vw - 35mm/2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35mm;
+  height: 50mm;
+  padding: 5px;
+  background: white;
+  flex-direction: column;
+  border-radius: 8px;
+  z-index: 1;
+  visibility: hidden;
+}
+.openpop {
+  visibility: visible;
+}
+
+
+.peep {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid gray;
+  width: 30mm;
+  height: 15mm;
+  box-sizing: border-box;
+  text-align: center;
+  border: none;
+  padding-right: 30px;
+  font-size: 1.1rem;
+}
+
+.peep:hover {
+  background: lightgrey;
+  width: 38mm;
+  font-weight: bolder;
+}
+.peep:active {
+  background: rgb(243, 176, 245);
+  font-weight: lighter;
+  
 }

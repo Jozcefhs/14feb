@@ -29,7 +29,7 @@
               <!-- Menu items -->
               
               <div class="menu-item" id="old">
-                <span class="option">&#x2026; <a href="#" data-tool-tip="More actions"></a></span>
+                <span class="option">&#x2026; <a href="#pop" data-tool-tip="More actions"></a></span>
                 <span id="create" class="icon">&#x2795;</span>
                 <span class="label">Add subject</span>
               </div>
@@ -51,9 +51,9 @@
               </div>
               <div class="pop" id="pop">
                 <!-- <span class="icon">&#x1F68D;</span> -->
-                <button id="popcancel">Cancel</button>
-                <button id="popedit">Edit</button>
-                <button id="popdel">Delete</button>
+                <div class="peep" id="popedit"><span>&#x1F58A;</span>Edit</div>
+                <div class="peep" id="popdel"><span>&#x1F5D1;</span>Delete</div>
+                <div class="peep" id="popcancel"><span>&#x26D4;</span>Cancel</div>
               </div>
               <div class="menu-item">
                 <span class="icon">&#x1F9EA;</span>
@@ -218,7 +218,16 @@
         </footer>
     </main>
   <script src="bundle.js"></script>
-  
+  <script>
+    
+
+    function myEventListenerFunction() {
+      
+      const openpop = document.getElementById('pop')
+        openpop.classList.add('openpop')
+    }
+
+  </script>
 
 </body>
 </html>
