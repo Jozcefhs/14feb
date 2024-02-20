@@ -217,17 +217,56 @@
           <!-- Add 4 more footer items similarly -->
         </footer>
     </main>
+    <!-- <script src="/src/exer.js"></script> -->
+      
   <script src="bundle.js"></script>
   <script>
-    
-
-    function myEventListenerFunction() {
-      
-      const openpop = document.getElementById('pop')
-        openpop.classList.add('openpop')
+    function myFunction (){
+      alert('Blow your baloon up blow blow blow')
     }
 
-  </script>
+    const moreActions = document.querySelector('.option')
+    
+    moreActions.addEventListener('click', function(){
+        openPop()
+    })
+    document.getElementById('popcancel').addEventListener('click', function(){
+      closePop()
+    })
+    
+    const openpop = document.getElementById('pop')
+    function openPop (){
+        openpop.classList.add('openpop')
+    }
+    function closePop (){
+        openpop.classList.remove('openpop')
+    }
 
+
+    
+    const duration = 1500;
+    let holdTimer;
+    const holdActinate = document.getElementById('createParent');
+
+    holdActinate.addEventListener('mousedown', startHold);
+    holdActinate.addEventListener('mouseup', endHold);
+    holdActinate.addEventListener('mouseleave', cancelHold);
+
+    function startHold() {
+        holdTimer = setTimeout(activatePage, duration);
+    }
+
+    function endHold() {
+        clearTimeout(holdTimer);
+    }
+
+    function cancelHold(){
+        clearTimeout(holdTimer);
+    }
+
+    function activatePage() {
+        alert('My brother, ee no eezi');
+    }
+  </script>
 </body>
 </html>
