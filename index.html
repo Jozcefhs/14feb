@@ -31,24 +31,39 @@
               <div class="menu-item" id="old">
                 <span class="option">&#x2026; <a href="#pop" data-tool-tip="More actions"></a></span>
                 <span id="create" class="icon">&#x2795;</span>
-                <span class="label">Add subject</span>
+                <span class="label">Add</span>
               </div>
               <!-- <div class="menu-item">
                 <span class="icon">&#x1F68D;</span>
                 <span class="label">Item 2</span>
               </div>-->
-              <div class="subject-popup" id="subject-popup">
-                <span id="headline">Select your subjects.&#x1F4DA;</span>
+
+                <div class="subject-popup" id="subject-popup">
+                  <span id="headline">Add subjects.&#x1F4DA;</span>
+                  <select name="subject-list" id="subject-list">
+                    <option value="">Engish Language</option>
+                    <option value="">Engish Language</option>
+                    <option value="">Engish Language</option>
+                  </select>
+                  <div id="btn">
+                    <button class="mer" id="createsub1"><span>Create</span></button>
+                    <button class="mer" id="createsub"><span>Cancel</span> </button>
+                  </div>
+                </div>
+
+              <div class="subject-popup1" id="subject-popup1">
+                <span id="headline">Add feature.&#x1F392;</span>
                 <select name="subject-list" id="subject-list">
-                  <option value="">Engish Language</option>
-                  <option value="">Engish Language</option>
-                  <option value="">Engish Language</option>
+                  <option value="">Physics</option>
+                  <option value="">Physics</option>
+                  <option value="">Physics</option>
                 </select>
                 <div id="btn">
-                  <button class="mer" id="createsub1"><span>Create</span></button>
-                  <button class="mer" id="createsub"><span>Cancel</span> </button>
+                  <button class="mer" id="createsub3"><span>Create</span></button>
+                  <button class="mer" id="createsub2"><span>Cancel</span> </button>
                 </div>
               </div>
+
               <div class="pop" id="pop">
                 <!-- <span class="icon">&#x1F68D;</span> -->
                 <div class="peep" id="popedit"><span>&#x1F58A;</span>Edit</div>
@@ -56,7 +71,7 @@
                 <div class="peep" id="popcancel"><span>&#x26D4;</span>Cancel</div>
               </div>
               <div class="menu-item">
-                <span class="icon">&#x1F9EA;</span>
+                <span class="icon" id="create4">&#x1F9EA;</span>
                 <span class="label">Item 4</span>
               </div>
               <div class="menu-item">
@@ -220,7 +235,7 @@
     <!-- <script src="/src/exer.js"></script> -->
       
   <script src="bundle.js"></script>
-  <script src="/src/exer.js"></script>
+  <!-- <script src="/src/exer.js"></script> -->
   <script>
     // function myFunction (){
     //   alert('Blow your baloon up blow blow blow')
@@ -248,51 +263,26 @@
     // moreActions.addEventListener('click', function(){
     //     openPop()
     //   })
+      // const openpop = document.getElementById('pop')
+      // const met = document.getElementById('popcancel' )
       
-    //   const openpop = document.getElementById('pop')
-    //   function openPop (){
-    //     openpop.classList.add('openpop')
-    //   }
-    //   function closePop (){
-    //     openpop.classList.remove('openpop')
-    //   }
+      // function openPop (){
+      //   openpop.classList.add('openpop')
+      // }
+      // function closePop (){
+      //   openpop.classList.remove('openpop')
+      // }
       
-    //   const met = document.getElementById('popcancel')
-    //   met.addEventListener('click', function(){
-    //     closePop()
-    //   })
+      // met.addEventListener('click', function(){
+      //   closePop()
+      // })
       
       
-    // // const her = document.getElementById('create')
-    // // her.addEventListener('dblclick', function(){
-    // //     openPop()
-    // // })
+    // const her = document.getElementById('create')
+    // her.addEventListener('dblclick', function(){
+    //     openPop()
+    // })
 
-
-    
-    const duration = 1500;
-    let holdTimer;
-    const holdActinate = document.getElementById('create');
-
-    holdActinate.addEventListener('mousedown', startHold);
-    holdActinate.addEventListener('mouseup', endHold);
-    holdActinate.addEventListener('mouseleave', cancelHold);
-
-    function startHold() {
-        holdTimer = setTimeout(activatePage, duration);
-    }
-
-    function endHold() {
-        clearTimeout(holdTimer);
-    }
-
-    function cancelHold(){
-        clearTimeout(holdTimer);
-    }
-
-    function activatePage() {
-        alert('My brother, ee no eezi');
-    }
 
   </script>
 </body>
