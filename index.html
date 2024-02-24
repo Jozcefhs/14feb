@@ -70,6 +70,7 @@
                 <div class="peep" id="popdel"><span>&#x1F5D1;</span>Delete</div>
                 <div class="peep" id="popcancel"><span>&#x26D4;</span>Cancel</div>
               </div>
+
               <div class="menu-item">
                 <span class="icon" id="create4">&#x1F9EA;</span>
                 <span class="label">Item 4</span>
@@ -237,53 +238,31 @@
   <script src="bundle.js"></script>
   <!-- <script src="/src/exer.js"></script> -->
   <script>
-    // function myFunction (){
-    //   alert('Blow your baloon up blow blow blow')
-    // }
+    const openpop = document.getElementById('pop')
+      const met = document.getElementById('popcancel' )
+      
+      function openPop (){
+        openpop.classList.add('openpop')
+      }
+      function closePop (){
+        openpop.classList.remove('openpop')
+      }
+      
+      met.addEventListener('click', function(){
+        closePop()
+      });
 
-    // const moreActions = document.querySelector('.option')
+
+      let featurepopup = document.getElementById('subject-popup1')
     
-    // moreActions.addEventListener('click', function(){
-    //     openPop()
-    // })
     
-    // const openpop = document.getElementById('pop')
-    // function openPop (){
-      //     openpop.classList.add('openpop')
-      // }
-      // function closePop (){
-        //     openpop.classList.remove('openpop')
-        // }
-        
-        
-        
-        
-    //     const moreActions = document.querySelector('.option')
-        
-    // moreActions.addEventListener('click', function(){
-    //     openPop()
-    //   })
-      // const openpop = document.getElementById('pop')
-      // const met = document.getElementById('popcancel' )
-      
-      // function openPop (){
-      //   openpop.classList.add('openpop')
-      // }
-      // function closePop (){
-      //   openpop.classList.remove('openpop')
-      // }
-      
-      // met.addEventListener('click', function(){
-      //   closePop()
-      // })
-      
-      
-    // const her = document.getElementById('create')
-    // her.addEventListener('dblclick', function(){
-    //     openPop()
-    // })
-
-
+    function openPopup1 (){
+        featurepopup.classList.add('open-subject-popup1')
+    }
+    
+    function closePopup1 (){
+        featurepopup.classList.remove('open-subject-popup1')
+    }
   </script>
 </body>
 </html>
