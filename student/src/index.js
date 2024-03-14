@@ -1,18 +1,61 @@
 import { initializeApp, deleteApp } from "firebase/app";
 import { getFirestore, collection, collectionGroup, doc, getDoc, getDocs, updateDoc, query, where, and, or, serverTimestamp, orderBy } from "firebase/firestore";
-
+/*
 import configs from "../../../src/JSON/configurations.json" assert {type: 'json'};
-// var [f1, f2, f3, f4, f5, f6] = configs;
 
-const ss = JSON.parse(sessionStorage.getItem('snapshot'));
 const classIndex = ["JSS 1","JSS 2","JSS 3","SSS 1","SSS 2","SSS 3","def"].indexOf(ss.class);
 const classConfiguration = configs[classIndex];
 //initial firebase app
 var app = initializeApp(classConfiguration)
 //init services
 var db = getFirestore();
+*/
+const ss = JSON.parse(sessionStorage.getItem('snapshot'));
+const listOfSubjects = document.querySelector('#subject-list');
+const subjects = ss.offered;
+for (const s of Object.entries(subjects)) {
+    listOfSubjects.insertAdjacentHTML('beforeend', `<option value="${s[1]}">${s1}</option>`)
+    // console.log(s);
+}
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // collection refs
 const userRef = doc(db, "students", ss.id);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 function chooseConfig(projConfig) {
@@ -20,7 +63,7 @@ function chooseConfig(projConfig) {
     app = initializeApp(projConfig);
     db = getFirestore();
 }
-*/
+
 //load user profile data
 document.querySelectorAll('#profile-nav div').forEach(div => {
     if (div.id === "full_name") {
@@ -189,6 +232,7 @@ subjectNav.addEventListener('click', (e) => {
         getDocuments(ctx, e.target.id);
     }
 })
+*/
 // getDocuments();
 // const dialog = document.querySelector('dialog#photo-dialog');
 /*

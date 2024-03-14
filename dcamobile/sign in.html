@@ -34,7 +34,8 @@
         <div class="form-content">
           <div class="login-form">
             <div class="title">Login</div>
-          <form role="form" onsubmit="signIn(event);" autocomplete="on">
+          <!-- <form name="login" role="form" onsubmit="signIn(event);" autocomplete="on"> -->
+          <form name="login" role="form" autocomplete="on">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-users"></i>
@@ -51,19 +52,23 @@
               </div>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Email or Admission No." id="email" required>
+                <input type="text" name="email" placeholder="Email or Admission No." id="email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" id="pwdd" required>
+                <input type="password" name="password" placeholder="Enter your password" id="pwdd" required>
               </div>
               <div class="text"><a href="#">Forgot password?</a></div>
               <div class="button input-box">
-                <input type="submit" value="Sumbit">
+                <input type="submit" value="Submit">
               </div>
               <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
             </div>
         </form>
+        <dialog open id="notice">
+            <output></output>
+            <button type="button">Okay</button>
+        </dialog>
       </div>
       <!-- Registration Form-->
         <div class="signup-form">
@@ -88,9 +93,9 @@
               </div>
               
               <div class="button input-box">
-                <input type="submit" value="Sumbit">
+                <input type="submit" value="Submit">
               </div>
-              <div class="text sign-up-text">Already have an account? <label for="flip"><a href="/dist/home.html">Login now</a></label></div>
+              <div class="text sign-up-text">Already have an account? <label for="flip"><!--a href="/dist/home.html">Login now</a--></label></div>
             </div>
       </form>
     </div>

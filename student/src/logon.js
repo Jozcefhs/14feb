@@ -22,8 +22,6 @@ const password = document.querySelector('#password');
 const notice = document.querySelector('dialog#notice');
 const loginForm = document.forms.login;
 
-// document.forms.login.removeAttribute('data-disabled')
-
 loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     e.submitter.disable = true;
@@ -39,7 +37,6 @@ loginForm.addEventListener('submit', async (e) => {
         e.submitter.style.cursor = 'pointer';
     } else {
         querySnapshot.docs.forEach(async doc => {
-            // let ue = doc.data().upload_enabled;
             let photo_src = doc.data().photo_src;
             let offered = doc.data().offered;
             let snapshot = {
@@ -57,36 +54,36 @@ loginForm.addEventListener('submit', async (e) => {
                 offered,
             }
             //reset Configuration to fetch subjects
-            resetConfig();
+            // resetConfig();
 
-            if(photo_src && offered) {
+            // if(photo_src && offered) {
                 sessionStorage.setItem('snapshot', JSON.stringify(snapshot));
-                return location.href = '../dist/index.html';
-            } else if (offered) {
-                sessionStorage.setItem('snapshot', JSON.stringify(snapshot));
-                return location.href = '../dist/temp.html?of=1&ps=0';
-            } else if (photo_src) {
-                const reservedSnapshot = classroom.value.startsWith('JSS') ? await getDoc(JSSubjectRef) : await getDoc(SSSubjectRef);
-                snapshot = {...snapshot, 'reservedPayload': reservedSnapshot.data() || reservedSnapshot.data()}
-                sessionStorage.setItem('snapshot', JSON.stringify(snapshot));
-                return location.href = '../dist/temp.html?of=0&ps=1';
-            } else {
-                const reservedSnapshot = classroom.value.startsWith('JSS') ? await getDoc(JSSubjectRef) : await getDoc(SSSubjectRef);
-                snapshot = {...snapshot, 'reservedPayload': reservedSnapshot.data()}
-                sessionStorage.setItem('snapshot', JSON.stringify(snapshot));
-                return location.href = '../dist/temp.html';
-            }
+                return location.href = '../../home.html';
+            // } else if (offered) {
+            //     sessionStorage.setItem('snapshot', JSON.stringify(snapshot));
+            //     return location.href = '../dist/temp.html?of=1&ps=0';
+            // } else if (photo_src) {
+            //     const reservedSnapshot = classroom.value.startsWith('JSS') ? await getDoc(JSSubjectRef) : await getDoc(SSSubjectRef);
+            //     snapshot = {...snapshot, 'reservedPayload': reservedSnapshot.data() || reservedSnapshot.data()}
+            //     sessionStorage.setItem('snapshot', JSON.stringify(snapshot));
+            //     return location.href = '../dist/temp.html?of=0&ps=1';
+            // } else {
+            //     const reservedSnapshot = classroom.value.startsWith('JSS') ? await getDoc(JSSubjectRef) : await getDoc(SSSubjectRef);
+            //     snapshot = {...snapshot, 'reservedPayload': reservedSnapshot.data()}
+            //     sessionStorage.setItem('snapshot', JSON.stringify(snapshot));
+            //     return location.href = '../dist/temp.html';
+            // }
         });
     }
 })
 
-function resetConfig () {
-    deleteApp(app);
-    app = initializeApp(configs[6])
-    db = getFirestore();
-    JSSubjectRef = doc(db, "reserved", "2aOQTzkCdD24EX8Yy518");
-    SSSubjectRef = doc(db, "reserved", "eWfgh8PXIEid5xMVPkoq");
-}
+// function resetConfig () {
+//     deleteApp(app);
+//     app = initializeApp(configs[6])
+//     db = getFirestore();
+//     JSSubjectRef = doc(db, "reserved", "2aOQTzkCdD24EX8Yy518");
+//     SSSubjectRef = doc(db, "reserved", "eWfgh8PXIEid5xMVPkoq");
+// }
 /*
 const mainRef = collection(db, "fileCollection");
 addDoc(collection(mainRef, "AGR", "JSS 1"),{
