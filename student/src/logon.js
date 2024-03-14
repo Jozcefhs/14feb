@@ -1,6 +1,6 @@
 import { initializeApp, deleteApp } from "firebase/app";
 import { getFirestore, collection, doc, getDoc, getDocs, query, where, and, or } from "firebase/firestore";
-import configs from "../../../src/JSON/configurations.json" assert {type: 'json'};
+import configs from "../../dcamobile/src/configurations.json" assert {type: 'json'};
 
 // initial firebase app
 var app = initializeApp(configs[6])
