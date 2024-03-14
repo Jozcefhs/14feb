@@ -229,7 +229,7 @@ dialog button {
   /* margin: 10px 0; */
   width: 50%;
   margin: 10px auto;
-  background-color: #ff2727;
+  background-color: #f06a6a;
   color: #fff;
   border-radius: 7px;
   border: none;
@@ -247,9 +247,15 @@ dialog#notice {
   border-radius: 7px;
   pointer-events: none;
   transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+  text-align: center; 
+  font: 1.5em sans-serif;
+  font-weight: bold;
+  color: #ff2727;
 }
 dialog#notice.active {
   opacity: 1;
   transform: translateY(40px);
   pointer-events: visible;
+  background-color: #f1d8d8;
+  z-index: 1000;
 }
