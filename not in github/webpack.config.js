@@ -13,6 +13,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].bundle.js'
     },
+    // devtool: false,
     watch: true
 }
 

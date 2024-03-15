@@ -10,7 +10,6 @@ var app = initializeApp(classConfiguration)
 //init services
 var db = getFirestore();
 */
-console.log("Inside index.js");
 
 const ss = JSON.parse(sessionStorage.getItem('snapshot'));
 const listOfSubjects = document.querySelector('#subject-list');
