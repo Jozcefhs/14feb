@@ -121,8 +121,9 @@
       let featurepopup = document.getElementById('subject-popup1')
     
     
-    function openPopup1 (){
-        featurepopup.classList.add('open-subject-popup1')
+    function openPopup1 (subjectName){
+      location.href = `context.html?sb=${subjectName}`;
+        // featurepopup.classList.add('open-subject-popup1')
     }
     
     function closePopup1 (){

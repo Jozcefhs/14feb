@@ -1,6 +1,6 @@
 import { initializeApp, deleteApp } from "firebase/app";
 import { getFirestore, collection, doc, getDoc, setDoc, query, where, and, or, updateDoc } from "firebase/firestore";
-import configs from "../../../src/JSON/configurations.json" assert {type: 'json'};
+import configs from "../../JSON/configurations.json" assert {type: 'json'};
 
 const params = atob(new URL(location.href).searchParams.get('sb'))
 const ct = parseInt(new URL(location.href).searchParams.get('ct'));
@@ -37,17 +37,7 @@ const startDate = new Date(subby[cat].startDate).setHours(24);
 const startTime = subby[cat].startTime;
 const duration = subby[cat].duration;
 
-// settingn up startTime
-/*
-const parts = startTime.split(':');
-const hr = parseInt(parts[0]);
-const mm = parseInt(parts[1]);
-var currentTime = new Date();
-currentTime.setHours(hr);
-currentTime.setMinutes(mm);
-currentTime.setMinutes(currentTime.getMinutes() + duration);
-var formattedTime = currentTime.getHours().toString().padStart(2, '0') + ':' + currentTime.getMinutes().toString().padStart(2, '0');
-*/
+
 
 async function chkDate() {
     if (startDate < Date.now()) {
@@ -170,12 +160,7 @@ accForm.addEventListener('submit', async (e) => {
     })
 })
 
-// document.addEventListener('fullscreenchange', () => {
-//     if (document.fullscreenElement === null) {
-//         submission();
-//         // submitBtn.click();
-//     }
-// })
+
 
 const classIndex = configs[7].indexOf(snappy.class);
 
@@ -184,36 +169,13 @@ var app = initializeApp(configs[classIndex]);
 // init services
 var db = getFirestore();
 
-// const selectElt = document.querySelector('select#classroom');
-// selectElt.addEventListener('change', (e) => {
-//     deleteApp(app);
-//     let optIndex = e.target.selectedIndex - 1;
-//     app = initializeApp(configs[optIndex]);
-//     // init services
-//     db = getFirestore()
-//     // collection refs
-// })
-// lksHjPA7
-// F79pWGRz
-// sKi3qxLu
-// new Date(JSON.parse(sessionStorage.LIT)[0].startDate) > Date.now()
-// JSON.parse(sessionStorage.LIT)[0].link
+
 submitBtn.addEventListener('click', (e) => {
     // display submitDialog
     // submitDialog.showModal();
     submission();
 });
-/*
-const yesBtn = document.querySelector('button#yes');
-yesBtn.addEventListener('click', (e) => {
-    submitDialog.querySelectorAll(button).forEach(btn => {
-        btn.disabled = true;
-        btn.style.cursor = 'not-allowed';
-    })
-    submission();
-    submitDialog.close();
-})
-*/
+
 async function submission() {
     // submitBtn.addEventListener('click', async (e) => {
         submitBtn.disabled = true;
@@ -239,26 +201,7 @@ async function submission() {
                 `;
                 msgDialog.showModal();
                 tbody.style.pointerEvents = 'none';
-            // } else {
-            //     if (res.data()[testAbbr][testNum] != null) return window.alert("You've already taken this test.");
-                // let arr = res.data()[testAbbr];
-                // arr.forEach((element, index) => {
-                //     updateVal.splice(index, 1, element)
-                // });
-                // updateVal[testNum] = Number((score/questions*rating).toFixed(1));
-        
-                // await setDoc(scoreRef, {
-                //     [testAbbr]: updateVal,
-                // }, { merge: true })
-                // msgDialog.querySelector('output').innerHTML = `
-                //     Your score:<br><large>${score} out of ${questions}</large>
-                // `;
-                // msgDialog.showModal();
-                // tbody.style.pointerEvents = 'none';
-            // }
-        // })
-    
-    // })
+            
 }
 
 const quizForm = document.forms.quizForm;
