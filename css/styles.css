@@ -125,7 +125,9 @@ html, body {
   .footer-item {
     text-align: center;
   }
-  
+  .footer-item .logout {
+    cursor: pointer;
+  }
   /* Additional styling for icons */
   .grid-menu > .menu-item .icon {
     /* width: 100px; */

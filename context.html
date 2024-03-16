@@ -13,11 +13,24 @@
         ::backdrop {
             background-color: rgba(0,0,0,.5);
         }
+        main {
+            margin: auto 300px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        main div.icon {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #aaa;
+            border-radius: 7px;
+            padding: 20px;
+        }
         dialog {
             outline: none;
             border: none;
             text-align: center;
-<<<<<<< HEAD
             margin: auto;
             width: 350px;
         }
@@ -29,8 +42,7 @@
             margin: 5px;
         }
         output.notFound {
-            background-color: red;
-            color: white;
+            color: #ff4343;
         }
         button {
             outline: none;
@@ -41,13 +53,11 @@
         button.progress {
             background-color: #009578;
             color: #fff;
-=======
         }
         dialog#progress output {
             padding: 20px;
             box-shadow: 0 0 7px #7777ff;
             color: #555;
->>>>>>> 1679104556195185d5a854e123c7e0874b7af979
         }
     </style>
 </head>
@@ -61,11 +71,9 @@
     <dialog id="progress">
         <output></output>
     </dialog>
-<<<<<<< HEAD
+
     <script src="context.bundle.js"></script>
-=======
     <script></script>
->>>>>>> 1679104556195185d5a854e123c7e0874b7af979
 
     <!-- </script> -->
 </body>
