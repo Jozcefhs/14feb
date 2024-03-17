@@ -63,6 +63,18 @@ html, body {
     background-repeat: no-repeat;
     margin-left: 1rem;
   }
+  #photo {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid goldenrod;
+    background-image: url(/dist/images/user.png);
+    background-size: 3.2rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 1rem;
+  }
   
   
   /* Content styling */
@@ -116,7 +128,7 @@ html, body {
     justify-content: space-around;
     align-items: center;
     background: linear-gradient(to right, #2a4e3c, #2a4e3c, #3e2f50);
-    /* padding: 10px; */
+    padding-bottom: 5px;
     z-index: 1000; 
     color: #fff;
     font-size: x-small;
