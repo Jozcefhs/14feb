@@ -73,10 +73,13 @@ main {
 }
 iframe {
     border: none;
-    flex: 5;
+    /* flex: 5; */
     background-color: #444;
     padding: 40px 10px 10px;
     border-radius: 8px;
+    /* width: 70%; */
+    width: calc(100vw - 40mm);
+    margin: 0 auto;
     
 }
 ::-webkit-scrollbar {
