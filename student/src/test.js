@@ -133,7 +133,7 @@ let buffer = new ArrayBuffer(questions);
 let dv = new DataView(buffer);
 let updateVal = [null, null, null, null];
 const msgDialog = document.querySelector('dialog#msgDialog');
-// const submitDialog = document.querySelector('dialog#submitDialog');
+const submitDialog = document.querySelector('dialog#submitDialog');
 const submitBtn = document.querySelector('.aside__footer input[type="submit"]');
 
 const accForm = document.forms.accForm;
@@ -149,18 +149,22 @@ accForm.addEventListener('submit', async (e) => {
         }
         if (acc === code) {
             accDialog.close();
-            // document.documentElement.requestFullscreen();
+            document.documentElement.requestFullscreen();
             displayHeader();
             displaySection();
             displayMain();
-            // intervalID = setInterval(countDown, 1 * 60 * 1000);
+            intervalID = setInterval(countDown, 1 * 60 * 1000);
         } else {
             window.alert("Invalid access token.")
         }
     })
 })
 
-
+document.addEventListener('fullscreenchange', () => {
+    if (document.fullscreenElement === null) {
+        submission();
+    }
+})
 
 const classIndex = configs[7].indexOf(snappy.class);
 
@@ -171,10 +175,20 @@ var db = getFirestore();
 
 
 submitBtn.addEventListener('click', (e) => {
-    // display submitDialog
-    // submitDialog.showModal();
-    submission();
+    e.preventDefault();
+    submitDialog.showModal();
+    // submission();
 });
+
+const yesBtn = document.querySelector('button#yes');
+yesBtn.addEventListener('click', (e) => {
+    submitDialog.querySelectorAll('button').forEach(btn => {
+        btn.disabled = true;
+        btn.style.cursor = 'not-allowed';
+    })
+    submission();
+    submitDialog.close();
+})
 
 async function submission() {
     // submitBtn.addEventListener('click', async (e) => {
