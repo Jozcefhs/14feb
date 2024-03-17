@@ -108,6 +108,8 @@ aside {
     overflow: auto;
     padding-top: 3rem;
     visibility: hidden;
+    border-radius: 8px;
+    border: solid 1px powderblue;
 }
 
 .open-aside {
@@ -128,6 +130,10 @@ tbody tr {
 td {
     padding: 20px;
 
+}
+
+.aside__header {
+    margin-top: 250mm;
 }
 
 .aside__form {
