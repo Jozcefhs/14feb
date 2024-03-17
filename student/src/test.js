@@ -11,7 +11,7 @@ const snappy = JSON.parse(sessionStorage.getItem('snapshot'));
 subby.forEach((sb, n) => {
     if (sb.catNo == ct) {
         cat = n;
-        // console.log(cat)
+        console.log(cat)
         return;
     }
 })
@@ -154,6 +154,7 @@ accForm.addEventListener('submit', async (e) => {
             displaySection();
             displayMain();
             // intervalID = setInterval(countDown, 1 * 60 * 1000);
+            // runIframe();
         } else {
             window.alert("Invalid access token.")
         }
@@ -208,3 +209,25 @@ const quizForm = document.forms.quizForm;
 quizForm.addEventListener('change', (e) => {
     dv.setInt8(e.target.name, e.target.value);
 })
+
+let answerPad = document.querySelector('.switch')
+
+function openpad () {
+    answerPad.classList.add('open-aside')
+}
+function closepad () {
+    answerPad.classList.remove('open-aside')
+}
+const iframeWindow = iframe.contentWindow;
+iframeWindow.addEventListener('click', function(){
+    if (answerPad.classList.contains('open-aside')) {
+        closepad();
+    } else {
+        openpad()
+    }
+})
+
+// iframeImg.addEventListener('dblclick', function(){
+//     console.log(iframeImg)
+//     closepad()
+// })
