@@ -133,13 +133,13 @@ td {
 }
 
 .aside__header {
-    margin-top: 500mm;
+    margin-top: 220cm;
 }
 
 .aside__form {
     border: 1px solid #fff;
     border-radius: 7px 7px 0 0;
-    /* position: sticky; */
+    position: sticky;
 }
 input[type='radio'] {
     display: none;
