@@ -121,7 +121,7 @@ function countDown () {
     sec--;
     if (timer.textContent == "0.00") {
         clearInterval(intervalID);
-        submission();
+        // submission();
         // submitBtn.click();
     } else {
         timer.textContent = duration + '.' + String(sec).padStart(2,0);
