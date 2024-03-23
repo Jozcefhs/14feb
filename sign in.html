@@ -12,6 +12,7 @@
     <title>Destiny Christian Academy</title>
    </head>
 <body>
+  <div class="close">&#x274C;</div>
   <div class="container">
     <input type="checkbox" id="flip">
     <div class="cover">
@@ -105,8 +106,12 @@
   </div>
   <script src="script2.bundle.js"></script>
   
-  <!--script>
-    
-  </script-->
+  <script>
+    closec = document.querySelector('.close').innerHTML
+   closec.addEventListener('click', function (){
+    console.log('I want to close  this page')
+    // window.close()
+   })
+  </script>
 </body>
 </html>
