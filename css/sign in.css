@@ -266,3 +266,8 @@ dialog#notice.active {
   left: 95%;
   font-size: larger;
 }
+
+.close:active {
+  font-size: 2rem;
+ 
+}
