@@ -262,7 +262,7 @@ dialog#notice.active {
 
 .close {
   position: absolute;
-  top: 4%;
+  top: 4.2%;
   left: 95%;
   font-size: larger;
 }
