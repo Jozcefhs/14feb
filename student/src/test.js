@@ -137,7 +137,7 @@ const uid = snappy.id;
 
 let buffer = new ArrayBuffer(questions);
 let dv = new DataView(buffer);
-let updateVal = [null, null, null, null];
+let updateVal;
 const msgDialog = document.querySelector('dialog#msgDialog');
 const submitDialog = document.querySelector('dialog#submitDialog');
 const submitBtn = document.querySelector('.aside__footer input[type="submit"]');
@@ -153,6 +153,7 @@ accForm.addEventListener('submit', async (e) => {
             window.alert("You've already taken this test.");
             return;
         }
+        updateVal = res.get(testAbbr) || [null, null, null, null];
         if (acc === code) {
             accDialog.close();
             document.documentElement.requestFullscreen();
