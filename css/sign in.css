@@ -259,3 +259,15 @@ dialog#notice.active {
   background-color: #f1d8d8;
   z-index: 1000;
 }
+
+.close {
+  position: absolute;
+  top: 4%;
+  left: 95%;
+  font-size: larger;
+}
+
+.close:active {
+  font-size: 2rem;
+ 
+}

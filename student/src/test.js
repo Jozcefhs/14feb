@@ -1,5 +1,5 @@
-import { initializeApp, deleteApp } from "firebase/app";
-import { getFirestore, collection, doc, getDoc, setDoc, query, where, and, or, updateDoc } from "firebase/firestore";
+import { initializeApp } from "firebase/app";
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 import configs from "../../JSON/configurations.json" assert {type: 'json'};
 
 const params = atob(new URL(location.href).searchParams.get('sb'))
@@ -11,7 +11,7 @@ const snappy = JSON.parse(sessionStorage.getItem('snapshot'));
 subby.forEach((sb, n) => {
     if (sb.catNo == ct) {
         cat = n;
-        console.log(cat)
+        // console.log(cat)
         return;
     }
 })
