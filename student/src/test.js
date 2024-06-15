@@ -1,4 +1,4 @@
-import { initializeApp } from "firebase/app";
+import { deleteApp, initializeApp } from "firebase/app";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 import configs from "../../JSON/configurations.json" assert {type: 'json'};
 
@@ -14,9 +14,7 @@ subby.forEach((sb, n) => {
         // console.log(cat)
         return;
     }
-})
-
-// const cat = subby.length < ct - 1 ? subby.length - ct : subby.length - 1;
+});
 
 const testAbbr = params;
 const testNum = ct - 1;
@@ -38,7 +36,25 @@ const startDate = new Date(subby[cat].startDate).setHours(24);
 const startTime = subby[cat].startTime;
 var duration = subby[cat].duration;
 
+const classIndex = configs[7].indexOf(snappy.class);
 
+// initial firebase app, assuming for SSS 3
+var app = initializeApp(configs[classIndex]);
+// init services
+var db = getFirestore();
+
+let eotDates, term;
+async function eot() {
+    const eotRef = doc(db, "reserved", "EOT");
+    await getDoc(eotRef).then((res) => {
+        eotDates = res.data();
+        term = ["First", "Second", "Third"].indexOf(res.data().this_term);
+        deleteApp(app);
+        app = initializeApp(configs[classIndex]);
+        db = getFirestore();
+    });
+}
+eot();
 
 async function chkDate() {
     if (startDate < Date.now()) {
@@ -132,7 +148,6 @@ function countDown () {
     }
 }
 
-// load options
 const uid = snappy.id;
 
 let buffer = new ArrayBuffer(questions);
@@ -148,12 +163,23 @@ accForm.addEventListener('submit', async (e) => {
     const acc = accForm.acc.value;
     // get test doc if available
     const scoreRef = doc(db, "scores", uid);
-    await getDoc(scoreRef).then(res => {
+    await getDoc(scoreRef).then(async res => {
         if (res.get(testAbbr) && res.get(testAbbr)[testNum] != null) {
             window.alert("You've already taken this test.");
             return;
         }
-        updateVal = res.get(testAbbr) || [null, null, null, null];
+        if (!res.exists || res.get(testAbbr) == undefined) {
+            await setDoc(scoreRef, {
+                [testAbbr]: {
+                    0: [null, null, null, null],
+                    1: [null, null, null, null],
+                    2: [null, null, null, null]
+                }
+            }, { merge: true });
+            updateVal = [null, null, null, null];
+        } else {
+            updateVal = res.get(testAbbr)[term];
+        }
         if (acc === code) {
             accDialog.close();
             document.documentElement.requestFullscreen();
@@ -172,14 +198,6 @@ accForm.addEventListener('submit', async (e) => {
 //         submission();
 //     }
 // })
-
-const classIndex = configs[7].indexOf(snappy.class);
-
-// initial firebase app, assuming for SSS 3
-var app = initializeApp(configs[classIndex]);
-// init services
-var db = getFirestore();
-
 
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -210,18 +228,16 @@ async function submission() {
             }
         }
         const scoreRef = doc(db, "scores", uid)
-        // await getDoc(scoreRef).then( async res => {
-        //     if (res.data()?.[testAbbr] === undefined) {
-                updateVal.splice(testNum, 1, Number((score/questions*rating).toFixed(1)))
-                await setDoc(scoreRef, {
-                    [testAbbr]: updateVal,
-                }, { merge: true })
-                // console.log("Test updated 1.")
-                msgDialog.querySelector('output').innerHTML = `
-                    Your score:<br><large>${score} out of ${questions}</large>
-                `;
-                msgDialog.showModal();
-                tbody.style.pointerEvents = 'none';
+        updateVal.splice(testNum, 1, Number((score/questions*rating).toFixed(1)))
+        await setDoc(scoreRef, {
+            [testAbbr]: {[term]: updateVal},
+        }, { merge: true })
+        // console.log("Test updated 1.")
+        msgDialog.querySelector('output').innerHTML = `
+            Your score:<br><large>${score} out of ${questions}</large>
+        `;
+        msgDialog.showModal();
+        tbody.style.pointerEvents = 'none';
             
 }
 
